@@ -322,20 +322,180 @@
     line-height: 1.2
 }
 
-/* ✅ Responsive: stack in mobile 
 @media (max-width: 768px) {
-  .lover-container {
+    .lover-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .lover-text {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .lover-text h2 {
+        font-size: 2rem;
+    }
+
+    .lover-text ul {
+        padding-left: 1.5rem;
+        text-align: left;
+    }
+
+    .trusted-badge {
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+    }
+
+    .lover-image-wrapper {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .lover-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .lover-image-wrapper {
+        max-width: 100%;
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .trusted-badge {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        z-index: 10;
+    }
+
+    .lover-text {
+        width: 100%;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .lover-text h2 {
+        font-size: 2rem;
+    }
+
+    .lover-text ul {
+        padding-left: 1.5rem;
+        text-align: left;
+    }
+}
+
+/* Deals Section */
+.deals-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+    align-items: stretch;
+    /* important: align items same height */
+}
+
+.deals-left {
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.deal-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.deal-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay */
+.deal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-  }
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem;
+}
 
-  .trusted-badge {
-    position: static;
-    margin: 1rem auto;
-  }
+.deal-overlay .discount {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
 
-  .lover-text {
-    text-align: left;
-  }
+.deal-overlay .shop-now {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+/* Size & Flex */
+.deal-card.small {
+    flex: 1;
+    min-height: 48%;
+    /* make both equal height with gap */
+}
+
+.deal-card.large {
+    flex: 2;
+    min-height: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .deals-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .deals-left {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .deal-card.small,
+    .deal-card.large {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+    }
+
+    .deal-overlay .discount {
+        font-size: 1.1rem;
+    }
+
+    .deal-overlay .shop-now {
+        font-size: 0.9rem;
+    }
 }
