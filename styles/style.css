@@ -4,8 +4,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    position: sticky;
-    top: 0;
     z-index: 1000;
     padding: 1.5rem 4rem;
 }
@@ -123,7 +121,8 @@
 
     /* Banner layout stack */
     .banner {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        /* 👈 This is the change */
         padding: 2rem 1.5rem;
         text-align: left;
     }
@@ -131,12 +130,6 @@
     .banner-image {
         max-width: 100%;
         margin-bottom: 1.5rem;
-    }
-
-    .banner-image img {
-        width: 100%;
-        height: auto;
-        display: block;
     }
 
     .banner-content {
@@ -150,24 +143,199 @@
 
     .banner-content p {
         max-width: 90%;
-        /* 🔧 Adjusted to avoid edge collision */
         font-size: 1rem;
         line-height: 1.6;
         margin-top: 1rem;
     }
+}
 
-    /* Header layout: Logo left, cart right */
-    .navbar {
-        padding: 1.2rem 1.5rem;
-    }
+/* plants Section */
 
-    .nav-links {
-        justify-content: space-between;
-        width: 100%;
-    }
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-    /* Optional: hide nav items except logo and cart */
-    .nav-links a:not(.cart):not(:first-child) {
-        display: none;
+/* Section */
+.products-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: transparent;
+}
+
+.products-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.products-section .highlight {
+    color: #ff5e00;
+}
+
+.products-desc {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+
+.product-card {
+
+    padding: 1rem;
+
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.product-card p {
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.product-card button {
+    background-color: #ff5e00;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Desktop */
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+/* lover section */
+.lover-section {
+    padding: 4rem 2rem;
+
+}
+
+.lover-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lover-image-wrapper {
+    position: relative;
+    max-width: 500px;
+    flex: 1;
+}
+
+.lover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+.trusted-badge {
+    position: absolute;
+    top: -50px;
+    left: 95%;
+    transform: translateX(-50%);
+    width: 150px;
+}
+
+
+
+.lover-text {
+    flex: 1;
+    color: #0f0f0f;
+    text-align: left;
+    width: 540px;
+    height: 521px;
+}
+
+.lover-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.lover-list {
+    color: #726f6f
+}
+
+.lover-text ul {
+    padding-left: 1.2rem;
+    list-style: disc;
+    font-size: 1.5rem;
+    line-height: 1.2
+}
+
+/* ✅ Responsive: stack in mobile 
+@media (max-width: 768px) {
+  .lover-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .trusted-badge {
+    position: static;
+    margin: 1rem auto;
+  }
+
+  .lover-text {
+    text-align: left;
+  }
 }
